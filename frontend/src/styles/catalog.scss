@@ -1,0 +1,36 @@
+$light: #fdf6f0;
+$dark: #3e1605;
+
+.ff {
+    font-family: 'Century Gothic';
+}
+.types {
+    background-color: $light;
+    font-size: 18px;
+    padding: 3% 0;
+    cursor: pointer;
+}
+.types h2 {
+    font-size: 24px;
+    text-align: center;
+    border-bottom: 2px solid black;
+    font-weight: bold;
+}
+
+
+.card {
+    width: 200px;
+    font-family: 'Century Gothic';
+}
+.name, .price, .imgcard {
+    padding: 3%;
+}
+.name {
+    font-size: 18px;
+    height: 75px;
+}
+.price {
+    font-size: 24px;
+    font-weight: bold;
+}
+

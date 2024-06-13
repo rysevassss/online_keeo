@@ -1,0 +1,21 @@
+.ackc {
+    background-color: #fdf6f0;
+    border-radius: 5px;
+    border: 1px solid#3e1605;
+}
+.promoimg img {
+    width: 500px;
+}
+.txtpromo h3{
+    font-weight: bold;
+}
+.infopromo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #3e1605;
+    padding: 1% 0;
+}
+.datepromo p {
+    margin-bottom: 1%;
+}

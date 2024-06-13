@@ -1,0 +1,104 @@
+$light: #fdf6f0;
+$dark: #3e1605;
+
+
+.header, .footer {
+    background-color: $light;
+    color: $dark;
+    font-family: 'Century Gothic';
+}
+.header {
+    text-align: center;
+    font-size: 40px;
+    line-height: 45px;
+    font-weight: bold;
+}
+button {
+    background-color: transparent;
+}
+.nav button, .images button {
+    border: 0px;
+    width: 45px;
+    height: 45px;
+}
+.nav img {
+    width: 40px;
+    height: 40px;
+}
+
+
+.menu {
+    background-color: $dark;
+    color: $light;
+    height: 60px;
+    font-family: 'Century Gothic';
+}
+.menu ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: auto;
+    margin-bottom: 0 !important;
+}
+.menu li {
+    width: 200px;
+}
+li.left, li.right {
+    font-size: 24px;
+}
+.center h2{
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+}
+.menu li h2:hover {
+    cursor: pointer;
+    font-size: 34px;
+    transition: all .3s;
+}
+.menu li:hover {
+    cursor: pointer;
+    font-size: 26px;
+    transition: all .3s;
+}
+li.left {
+    text-align: right;
+}
+li.right {
+    text-align: left;
+}
+
+
+
+.pp h3  {
+    margin-top: 10%;
+    text-align: center;
+    font-weight: bold;
+    color: $dark;
+    margin-bottom: 5%;
+    padding-bottom: 1%;
+    border-bottom: 2px solid $dark;
+}
+
+
+.footer {
+    margin-top: 4%;
+    height: 200px;
+}
+.footer h3 {
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 8%;
+}
+.images {
+    display: flex;
+    justify-content: center;
+}
+.socnet button {
+    margin: 0 2%;
+}
+.socnet img {
+    width: 40px;
+    height: 40px;
+}

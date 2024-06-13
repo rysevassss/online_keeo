@@ -1,0 +1,84 @@
+.leftcard, .rightcard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2% 0%;
+    border-radius: 15px;
+    margin: auto;
+    height: 300px;
+}
+.leftcard h2, .rightcard h2 {
+    font-weight: bold;
+}
+.leftcard {
+    background-color: #fdf6f0;
+    color: #3e1605;
+}
+.rightcard {
+    background-color: #3e1605;
+    color: #fdf6f0;
+}
+.rightcard p {
+    text-align: center;
+    font-style: italic;
+    text-decoration: underline;
+}
+.form {
+    background-color: #fdf6f0 !important;
+    border: 1px solid #3e1605 !important;
+    border-radius: 5px;
+    padding: 0;
+}
+.lb {
+    width: 75%;
+}
+.lb label {
+    font-weight: bold;
+    font-size: 15px;
+}
+Button.regbtn {
+    color: #3e1605;
+    background-color: #fdf6f0 ;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 10px;
+    height: 45px;
+    border: 0;
+}
+Button.regbtn:hover {
+    color: #3e1605;
+    background-color: #fdf6f0 ;
+}
+Button.regbtn:focus{
+    color: #3e1605 !important;
+    background-color: #fdf6f0 !important;
+}
+Button.stbtn {
+    color: #fdf6f0;
+    background-color: #3e1605;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 10px;
+    height: 45px;
+    border: 0;
+}
+Button.stbtn:hover {
+    color: #fdf6f0;
+    background-color: #3e1605;
+}
+Button.stbtn:focus{
+    color: #fdf6f0 !important;
+    background-color: #3e1605 !important;
+}
+Button.stbtn:disabled{
+    color: #fdf6f0 ;
+    background-color: #3e1605 ;
+}
+.form-err p{
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+}
