@@ -12,7 +12,8 @@ const UpdateOrdStatus = ({ show, onHide, orderId }) => { // Передаем ord
   const updStat = async () => {
     await updateOrderStatus(orderId, value).then(data => {
       onHide();
-      alert(`Статус заказа успешно обновлен!`)
+      alert(`Статус заказа успешно обновлен!`);
+      window.location.reload();
     });
   };
 

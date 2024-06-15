@@ -17,6 +17,12 @@ const App = observer(() => {
 
   useEffect(() => {
     setTimeout(()=> {
+      if (!localStorage.getItem('token')) {
+      user.setIsAuth(false); // Устанавливаем isAuth в false, если токен отсутствует
+      setLoading(false);
+      return;
+      }
+
     check().then(data => {
         user.setUser(data)
         user.setIsAuth(true)

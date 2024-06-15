@@ -5,7 +5,7 @@ const authMiddleware = require('../middleware/Auth');
 const checkRole = require('../middleware/CheckRole');
 
 router.post('/', authMiddleware, orderController.addOrder)
-router.get('/', authMiddleware, checkRole('admin'), orderController.getAllOrder)
+router.get('/', authMiddleware, orderController.getAllOrder)
 router.get('/user', authMiddleware, orderController.getUserOrder)
 router.put('/:id', authMiddleware, checkRole('admin'), orderController.updateOrderStatus)
 
