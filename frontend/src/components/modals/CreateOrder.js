@@ -2,7 +2,7 @@ import React, {useContext, useState} from 'react';
 import Modal from "react-bootstrap/Modal";
 import {Button, Form} from "react-bootstrap";
 import {Context} from "../../index";
-import {addOrder, addToCart} from "../../http/productAPI";
+import {addOrder, addToCart, deleteCart} from "../../http/productAPI";
 import {observer} from "mobx-react-lite";
 import { useForm } from 'react-hook-form';
 
@@ -20,7 +20,9 @@ const CreateOrder = observer(({show, onHide}) => {
             addOrder(id, data.phone, data.name, data.surname, data.region, data.city, data.street, data.street_num, data.flat, data.comment)
             .then(() => {
                 alert('Заказ был успешно оформлен!');
+                deleteCart();
                 onHide();
+
             })
         } catch (e) {
             alert(e.response.data.message);
