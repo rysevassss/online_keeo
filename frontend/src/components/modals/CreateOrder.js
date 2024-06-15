@@ -1,8 +1,8 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import Modal from "react-bootstrap/Modal";
 import {Button, Form} from "react-bootstrap";
 import {Context} from "../../index";
-import {addOrder, addToCart, deleteCart} from "../../http/productAPI";
+import {addOrder, addToCart, deleteCart, getCart} from "../../http/productAPI";
 import {observer} from "mobx-react-lite";
 import { useForm } from 'react-hook-form';
 
