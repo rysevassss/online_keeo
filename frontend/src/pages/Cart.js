@@ -35,13 +35,13 @@ const cart = observer(() => {
 
 
     const _delete = (id) => {
-        deleteFromCart(id).then(response => alert(`Товар удален из корзины`)).then(response => refreshPage())
+        deleteFromCart(id).then(response => alert(`Товар удален из корзины`))
     }
     const _deleteall = () => {
         if (product.cart.length === 0) {
             alert('Корзина пуста!')
         } else {
-        deleteCart().then(response => alert(`Товары удалены из корзины`)).then(response => refreshPage())
+        deleteCart().then(response => alert(`Товары удалены из корзины`))
     }}
 
 
