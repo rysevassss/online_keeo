@@ -13,7 +13,6 @@ const UpdateOrdStatus = ({ show, onHide, orderId }) => { // Передаем ord
     await updateOrderStatus(orderId, value).then(data => {
       onHide();
       alert(`Статус заказа успешно обновлен!`)
-      window.location.reload();
     });
   };
 

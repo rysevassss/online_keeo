@@ -34,16 +34,12 @@ const cart = observer(() => {
   `;
 
 
-const refreshPage = ()=>{
-    window.location.reload();
-}
     const _delete = (id) => {
         deleteFromCart(id).then(response => alert(`Товар удален из корзины`)).then(response => refreshPage())
     }
     const _deleteall = () => {
         if (product.cart.length === 0) {
             alert('Корзина пуста!')
-            refreshPage();
         } else {
         deleteCart().then(response => alert(`Товары удалены из корзины`)).then(response => refreshPage())
     }}

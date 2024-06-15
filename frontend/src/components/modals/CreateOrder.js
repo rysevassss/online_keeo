@@ -21,7 +21,6 @@ const CreateOrder = observer(({show, onHide}) => {
             .then(() => {
                 alert('Заказ был успешно оформлен!');
                 onHide();
-                window.location.reload();
             })
         } catch (e) {
             alert(e.response.data.message);
