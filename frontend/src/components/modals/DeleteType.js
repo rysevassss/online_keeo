@@ -16,16 +16,6 @@ const DeleteType =({show, onHide}) => {
       await deleteType(value).then(data => onHide());
   }};
   
-    const StyledButton = styled.button`
-    color: #3e1605;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 18px;
-    height: 20%;
-    width: 15%;
-    border: 1px solid #3e1605;
-    `;
-
   return (
     <Modal
       show={show}
@@ -52,8 +42,8 @@ const DeleteType =({show, onHide}) => {
         </Form>
       </Modal.Body>
       <Modal.Footer>
-        <StyledButton onClick={onHide}>Закрыть</StyledButton>
-        <StyledButton onClick={removeType}>Удалить</StyledButton>
+        <Button variant="outline-danger" onClick={onHide}>Закрыть</Button>
+        <Button variant="outline-success" onClick={removeType}>Удалить</Button>
       </Modal.Footer>
     </Modal>
   );

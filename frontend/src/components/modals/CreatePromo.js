@@ -21,6 +21,7 @@ const CreatePromo = observer(({show, onHide}) => {
       }
 
       const addPromo = () => {
+        if(name && description && start && end && file > 0){
         const formData = new FormData()
         formData.append('name', name)
         formData.append('description', description)
@@ -28,17 +29,9 @@ const CreatePromo = observer(({show, onHide}) => {
         formData.append('end', end)
         formData.append('img', file)
         createPromo(formData).then(data => onHide())
+      } else {
+        alert(`Не все поля заполнены!`)}
       }
-
-      const StyledButton = styled.button`
-color: #3e1605;
-border-radius: 10px;
-cursor: pointer;
-font-size: 18px;
-height: 20%;
-width: 15%;
-border: 1px solid #3e1605;
-`;
 
       return (
         <Modal
@@ -84,8 +77,8 @@ border: 1px solid #3e1605;
                 </Form>
       </Modal.Body>
       <Modal.Footer>
-        <StyledButton onClick={onHide}>Закрыть</StyledButton>
-        <StyledButton onClick={addPromo}>Добавить</StyledButton>
+        <Button variant="outline-danger" onClick={onHide}>Закрыть</Button>
+        <Button variant="outline-success" onClick={addPromo}>Добавить</Button>
       </Modal.Footer>
     </Modal>
   );

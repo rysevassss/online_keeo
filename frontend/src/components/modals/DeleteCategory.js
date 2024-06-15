@@ -16,16 +16,6 @@ const DeleteCategory = ({show, onHide}) => {
       await deleteCategory(value).then(data => onHide());
   }};
 
-  const StyledButton = styled.button`
-    color: #3e1605;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 18px;
-    height: 20%;
-    width: 15%;
-    border: 1px solid #3e1605;
-    `;
-
   return (
     <Modal
       show={show}
@@ -52,8 +42,8 @@ const DeleteCategory = ({show, onHide}) => {
         </Form>
       </Modal.Body>
       <Modal.Footer>
-        <StyledButton onClick={onHide}>Закрыть</StyledButton>
-        <StyledButton onClick={removeCategory}>Удалить</StyledButton>
+        <Button variant="outline-danger" onClick={onHide}>Закрыть</Button>
+        <Button variant="outline-success" onClick={removeCategory}>Удалить</Button>
       </Modal.Footer>
     </Modal>
   );

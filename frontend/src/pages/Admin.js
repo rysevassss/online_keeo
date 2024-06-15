@@ -13,10 +13,18 @@ import {Context} from '../index';
 import {getAllOrder, updateOrderStatus} from '../http/productAPI';
 import '../styles/admin.scss';
 import DeletePromo from '../components/modals/DeletePromo';
+import { useNavigate } from 'react-router-dom';
+import { SHOP_ROUTE } from '../utils/consts';
 
 
 const Admin = () => {
-    const {product} = useContext(Context)
+    const {product, user} = useContext(Context)
+    const history = useNavigate()
+    const isAdminStored = localStorage.getItem('isAdmin') === 'true';
+    if (isAdminStored) {
+    user.setIsAdmin(true);
+}
+
     useEffect(() => {
         getAllOrder().then(data => product.setOrders(data))
     }, [product])
@@ -84,6 +92,8 @@ const Admin = () => {
 
     return (
         <Container className='d-flex mx-auto dd'>
+            {user.isAdmin ?
+            <div className='d-flex'>
             <Col md={7}>
             <Row className='mx-3 mt-5'>
             <h1 className='dd'>Заказы пользователей</h1>
@@ -161,7 +171,10 @@ const Admin = () => {
             <DeleteCategory show={delcategoryVisible} onHide={() => setdelCategoryVisible(false)}/>
             <DeleteProduct show={delproductVisible} onHide={() => setdelProductVisible(false)}/>
             <DeletePromo show={delpromoVisible} onHide={() => setPromoVisible(false)}/>
-            {selectedOrder && <UpdateOrdStatus show={statusVisible} onHide={() => setStatusVisible(false)} orderId={selectedOrder} />}
+            {selectedOrder && <UpdateOrdStatus show={statusVisible} onHide={() => setStatusVisible(false)} orderId={selectedOrder} />} </div> :
+            <div className='us'>
+                <h5>Содержимое недоступно:c</h5>
+                <p onClick={() => history(SHOP_ROUTE)}>Вернуться на главную</p></div> }
         </Container>
     );
 };

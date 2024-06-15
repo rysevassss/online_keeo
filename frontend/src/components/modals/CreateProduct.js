@@ -38,17 +38,19 @@ const CreateProduct = observer(({show, onHide}) => {
   }
 
 const addProduct = () => {
-  const formData = new FormData()
-  formData.append('name', name)
-  formData.append('price', `${price}`)
-  formData.append('img', file)
-  formData.append('ingredients', ingredients)
-  formData.append('description', description)
-  formData.append('typeId', product.selectedType.id)
-  formData.append('categoryId', product.selectedCategory.id)
-  formData.append('info', JSON.stringify(info))
-  createProduct(formData).then(data => onHide())
-}
+  if(name && price && description && ingredients && file && product.selectedType && product.selectedCategory && info.length > 0) {
+    const formData = new FormData()
+    formData.append('name', name)
+    formData.append('price', `${price}`)
+    formData.append('img', file)
+    formData.append('ingredients', ingredients)
+    formData.append('description', description)
+    formData.append('typeId', product.selectedType.id)
+    formData.append('categoryId', product.selectedCategory.id)
+    formData.append('info', JSON.stringify(info))
+    
+    createProduct(formData).then(data => onHide())
+} else {alert(`Не все поля заполнены!`)}}
 
 
   return (

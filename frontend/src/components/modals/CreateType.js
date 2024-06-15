@@ -17,6 +17,8 @@ const CreateType = ({show, onHide}) => {
     })
 }
 
+const isInputValid = value.trim() !== '';
+
   return (
     <Modal
       show={show}
@@ -39,7 +41,9 @@ const CreateType = ({show, onHide}) => {
       </Modal.Body>
       <Modal.Footer>
         <Button variant="outline-danger" onClick={onHide}>Закрыть</Button>
-        <Button variant="outline-success" onClick={addType}>Добавить</Button>
+        <Button variant="outline-success" 
+        disabled={!isInputValid} 
+        onClick={addType}>Добавить</Button>
       </Modal.Footer>
     </Modal>
   );

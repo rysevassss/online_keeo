@@ -17,16 +17,6 @@ const UpdateOrdStatus = ({ show, onHide, orderId }) => { // Передаем ord
     });
   };
 
-  const StyledButton = styled.button`
-    color: #3e1605;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 18px;
-    height: 20%;
-    width: 15%;
-    border: 1px solid #3e1605;
-  `;
-
   return (
     <Modal
       show={show}
@@ -50,8 +40,8 @@ const UpdateOrdStatus = ({ show, onHide, orderId }) => { // Передаем ord
 
       </Modal.Body>
       <Modal.Footer>
-        <StyledButton onClick={onHide}>Закрыть</StyledButton>
-        <StyledButton onClick={updStat}>Обновить</StyledButton>
+        <Button variant="outline-danger" onClick={onHide}>Закрыть</Button>
+        <Button variant="outline-success" onClick={updStat}>Обновить</Button>
       </Modal.Footer>
     </Modal>
   );

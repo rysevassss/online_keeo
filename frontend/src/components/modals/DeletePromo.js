@@ -14,18 +14,10 @@ const DeletePromo = ({show, onHide}) => {
   
   const removePromo = async() => {
     if (value) {
-      await deletePromo(value).then(data => onHide());
+      await deletePromo(value);
+      onHide();
   }};
 
-  const StyledButton = styled.button`
-    color: #3e1605;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 18px;
-    height: 20%;
-    width: 15%;
-    border: 1px solid #3e1605;
-    `;
 
   return (
     <Modal
@@ -37,24 +29,24 @@ const DeletePromo = ({show, onHide}) => {
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-            Удалить категорию     
+            Удалить акцию    
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Form>
         <Form.Control as="select" value={value} onChange={e => setValue(e.target.value)}>
             <option value="">Выберите акцию</option>
-            {promo.promos.map(akc => (
-              <option key={akc.id} value={akc.id}>
-                {akc.name}
+            {promo.promos.map(promo => (
+              <option key={promo.id} value={promo.id}>
+                {promo.name}
               </option>
             ))}
           </Form.Control>
         </Form>
       </Modal.Body>
       <Modal.Footer>
-        <StyledButton onClick={onHide}>Закрыть</StyledButton>
-        <StyledButton onClick={removePromo}>Удалить</StyledButton>
+        <Button variant="outline-danger" onClick={onHide}>Закрыть</Button>
+        <Button variant="outline-success" onClick={removePromo}>Удалить</Button>
       </Modal.Footer>
     </Modal>
   );

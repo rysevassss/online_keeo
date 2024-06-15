@@ -17,15 +17,7 @@ const CreateCategory = ({show, onHide}) => {
     })
 }
 
-const StyledButton = styled.button`
-color: #3e1605;
-border-radius: 10px;
-cursor: pointer;
-font-size: 18px;
-height: 20%;
-width: 15%;
-border: 1px solid #3e1605;
-`;
+const isInputValid = value.trim() !== '';
 
   return (
     <Modal
@@ -49,8 +41,9 @@ border: 1px solid #3e1605;
         </Form>
       </Modal.Body>
       <Modal.Footer>
-        <StyledButton onClick={onHide}>Закрыть</StyledButton>
-        <StyledButton onClick={addCategory}>Добавить</StyledButton>
+        <Button variant="outline-danger" onClick={onHide}>Закрыть</Button>
+        <Button variant="outline-success" onClick={addCategory}
+        disabled={!isInputValid} >Добавить</Button>
       </Modal.Footer>
     </Modal>
   );
