@@ -7,12 +7,14 @@ import {observer} from "mobx-react-lite";
 import { useForm } from 'react-hook-form';
 
 const CreateOrder = observer(({show, onHide}) => {
-    const {user} = useContext(Context)
+    const {user, product} = useContext(Context)
     const {register, formState: {errors, isValid}, handleSubmit} = useForm({
         mode: 'onBlur',
     })
     const id = user.isUser;
-
+    useEffect(() => {
+        getCart().then(data => product.setCarts(data))
+    }, [product])
     
 
     const onSubmit = (data) => {
@@ -20,8 +22,8 @@ const CreateOrder = observer(({show, onHide}) => {
             addOrder(id, data.phone, data.name, data.surname, data.region, data.city, data.street, data.street_num, data.flat, data.comment)
             .then(() => {
                 alert('Заказ был успешно оформлен!');
-                deleteCart();
                 onHide();
+                deleteCart();
 
             })
         } catch (e) {
