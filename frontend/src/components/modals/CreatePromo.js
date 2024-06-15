@@ -21,13 +21,13 @@ const CreatePromo = observer(({show, onHide}) => {
       }
 
       const addPromo = () => {
-        if(name && description && file > 0){
+        if(name && description && start && end && file && file.length > 0){
         const formData = new FormData()
         formData.append('name', name)
         formData.append('description', description)
         formData.append('start', start)
         formData.append('end', end)
-        formData.append('img', file)
+        formData.append('img', file[0])
         createPromo(formData).then(data => onHide())
       } else {
         alert(`Не все поля заполнены!`)}
