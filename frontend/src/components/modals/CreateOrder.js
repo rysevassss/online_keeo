@@ -1,20 +1,18 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, {useContext, useState} from 'react';
 import Modal from "react-bootstrap/Modal";
 import {Button, Form} from "react-bootstrap";
 import {Context} from "../../index";
-import {addOrder, addToCart, deleteCart, getCart} from "../../http/productAPI";
+import {addOrder, addToCart} from "../../http/productAPI";
 import {observer} from "mobx-react-lite";
 import { useForm } from 'react-hook-form';
 
 const CreateOrder = observer(({show, onHide}) => {
-    const {user, product} = useContext(Context)
+    const {user} = useContext(Context)
     const {register, formState: {errors, isValid}, handleSubmit} = useForm({
         mode: 'onBlur',
     })
     const id = user.isUser;
-    useEffect(() => {
-        getCart().then(data => product.setCarts(data))
-    }, [product])
+
     
 
     const onSubmit = (data) => {
@@ -23,8 +21,7 @@ const CreateOrder = observer(({show, onHide}) => {
             .then(() => {
                 alert('Заказ был успешно оформлен!');
                 onHide();
-                deleteCart();
-
+                window.location.reload();
             })
         } catch (e) {
             alert(e.response.data.message);
