@@ -21,7 +21,7 @@ const CreatePromo = observer(({show, onHide}) => {
       }
 
       const addPromo = () => {
-        if(name && description && start && end && file && file.length > 0){
+        if(name && description > 0){
         const formData = new FormData()
         formData.append('name', name)
         formData.append('description', description)
