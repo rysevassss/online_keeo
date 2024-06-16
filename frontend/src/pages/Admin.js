@@ -170,7 +170,7 @@ const Admin = () => {
             <DeleteType show={deltypeVisible} onHide={() => setdelTypeVisible(false)}/>
             <DeleteCategory show={delcategoryVisible} onHide={() => setdelCategoryVisible(false)}/>
             <DeleteProduct show={delproductVisible} onHide={() => setdelProductVisible(false)}/>
-            <DeletePromo show={delpromoVisible} onHide={() => setPromoVisible(false)}/>
+            <DeletePromo show={delpromoVisible} onHide={() => setdelPromoVisible(false)}/>
             {selectedOrder && <UpdateOrdStatus show={statusVisible} onHide={() => setStatusVisible(false)} orderId={selectedOrder} />} </div> :
             <div className='us'>
                 <h5>Содержимое недоступно:c</h5>

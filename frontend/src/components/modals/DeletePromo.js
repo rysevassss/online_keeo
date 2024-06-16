@@ -3,7 +3,6 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { Form } from 'react-bootstrap';
 import { FormControl } from 'react-bootstrap';
-import { deleteCategory } from '../../http/productAPI';
 import styled from 'styled-components';
 import { Context } from '../..';
 import { deletePromo } from '../../http/promoAPI';
@@ -18,7 +17,6 @@ const DeletePromo = ({show, onHide}) => {
       onHide();
   }};
 
-
   return (
     <Modal
       show={show}
@@ -29,7 +27,7 @@ const DeletePromo = ({show, onHide}) => {
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-            Удалить акцию    
+            Удалить акцию  
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
