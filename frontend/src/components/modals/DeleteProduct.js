@@ -10,9 +10,18 @@ const DeleteProduct = ({show, onHide}) => {
 
   const [value, setValue] = useState('')
   
-  const removeProduct = async() => {
-    await deleteProduct(value);
-  }
+  const removeProduct = async () => {
+    try {
+        await deleteProduct(value);
+        onHide();
+    } catch (error) {
+        if (error.response.status === 404) {
+            alert('Товар с указанным ID не найден');
+        } else {
+            alert('Произошла ошибка при удалении товара');
+        }
+    }
+}
   const isInputValid = value.trim() !== '';
   return (
     <Modal
