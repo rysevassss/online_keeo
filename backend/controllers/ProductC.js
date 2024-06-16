@@ -64,6 +64,9 @@ class ProductController {
     async delete(req, res) {
         const {id} = req.params
         const product = await Product.findByPk(id)
+        if (!product) {
+            return res.status(404).json({ message: "Товар не найден" });
+        }
         await product.destroy()
         res.json(product)
     }
