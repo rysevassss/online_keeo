@@ -69,6 +69,14 @@ class OrderController {
             res.status(500).json({ message: 'Произошла ошибка при обновлении статуса заказа', error: error.message });
         }
     }
+    async getUserOrderList(req,res){
+        const {id} = req.params
+        const data = await Order.findOne( {where: {id: id}})
+        const order =  await OrderProduct.findAll({include: {
+                model: Product
+            }, where: {orderId: id}});
+        return res.json(order)
+    }
 }
 module.exports = new OrderController()
 
