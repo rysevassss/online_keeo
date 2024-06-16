@@ -21,6 +21,7 @@ const CreateOrder = observer(({show, onHide}) => {
             .then(() => {
                 alert('Заказ был успешно оформлен!');
                 onHide();
+                window.open('https://sberbank.ru/', '_blank');
                 window.location.reload();
             })
         } catch (e) {
