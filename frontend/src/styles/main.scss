@@ -25,6 +25,9 @@ button {
     width: 40px;
     height: 40px;
 }
+.nav label {
+    cursor: pointer;
+}
 
 
 .menu {
@@ -82,8 +85,11 @@ li.right {
 
 
 .footer {
-    margin-top: 4%;
+    margin-top: 10%;
     height: 200px;
+    position:fixed;
+    left:0px;
+    bottom:0px;
 }
 .footer h3 {
     text-align: center;
@@ -101,4 +107,12 @@ li.right {
 .socnet img {
     width: 40px;
     height: 40px;
+}
+.contacts p {
+ margin: 0;
+ padding: 0;
+}
+.link:hover {
+    cursor: pointer;
+    text-decoration: underline;
 }

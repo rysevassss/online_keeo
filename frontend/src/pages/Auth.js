@@ -51,14 +51,14 @@ const Auth = observer(() => {
     
 
     return (
-        <Container className='ff mt-3'>
+        <Container className='ff be mt-3'>
              <Breadcrumb>
             <Breadcrumb.Item onClick={() => history(SHOP_ROUTE)}> Главная</Breadcrumb.Item>
             {isLogin ? <Breadcrumb.Item active>Вход</Breadcrumb.Item> :
             <Breadcrumb.Item active>Регистрация</Breadcrumb.Item>
             }
             </Breadcrumb>
-            <Row className='mt-5'>
+            <Row className='ca'>
             <Col md={5} className="leftcard">
                 <h2>{isLogin ? 'Вход' : "Регистрация"}</h2>
                 <Form 
